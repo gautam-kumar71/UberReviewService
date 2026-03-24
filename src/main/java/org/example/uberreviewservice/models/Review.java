@@ -30,30 +30,20 @@ import java.time.LocalDateTime;
 @Entity(name="bookreview")//logical table name for spring-data-jpa
 @Table(name ="bookingreview")//will change the table name to bookingreview in the the database end
 @EntityListeners(AuditingEntityListener.class)
+
 /**
  * When an entity is persisted or updated, JPA triggers lifecycle events.
  * The AuditingEntityListener listens to these events and automatically sets
  * timestamp fields before the SQL operation is executed.
  */
-public class Review {
-    @Id//used to make the column as primary key column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//auto increment
-    private Long id;
+public class Review extends BaseModel{
 
     @Column(nullable=false)
     private String content;
 
     private Double rating;
 
-    @Column(nullable=false)
-//    @Temporal(TemporalType.TIMESTAMP)  //deprecated now
-    @CreatedDate
-    private LocalDateTime createdAt;//hibernate automatically maps it to timestamp
 
-    @Column(nullable=false)
-//    @Temporal(TemporalType.TIMESTAMP)
-    @LastModifiedDate
-    private LocalDateTime updatedAt;
 
 //    public Review(){} //or add the annotation @NoArgsConstructor because builder wants a no args constructor
 }

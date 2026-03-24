@@ -36,7 +36,7 @@ public class ReviewService implements CommandLineRunner {
         reviews.stream()
                 .forEach((reviewObj)->{System.out.println(reviewObj.getContent());});//getContent is coming from lombok, it is basically the getter from the Review class
 
-        reviewRepository.deleteById(2L);
+        reviewRepository.deleteById(10L);
 
     }
 }
