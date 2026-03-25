@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
  */
 public  abstract class BaseModel {
     @Id//used to make the column as primary key column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//auto increment
+    @GeneratedValue(strategy = GenerationType.TABLE)//auto increment
     protected Long id;
 
     @Column(nullable=false)
