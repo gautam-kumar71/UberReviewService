@@ -55,7 +55,7 @@ public class ReviewService implements CommandLineRunner {
         reviewRepository.save(r2);//saving passenger review
 
         bookingRepository.save(b);
-        bookingRepository.deleteById(252L);
+        bookingRepository.deleteById(252L);//here the parent table entry is being deleted, so its corresponding child table entry will also be deleted
 
 
 //        reviewRepository.save(b);

@@ -49,8 +49,6 @@ public class Review extends BaseModel{
 
     private Double rating;
 
-    @ManyToOne
-    private Driver driver;
 
 
 //    public Review(){} //or add the annotation @NoArgsConstructor because hibernate wants a no args constructor

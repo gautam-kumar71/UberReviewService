@@ -24,11 +24,13 @@ public class Driver extends BaseModel{
     @Column(nullable=false,unique = true)
     private String licenseNumber;
 
-    @OneToMany
+    @OneToMany //the foreign key will be one the booking side, not the driver side
     /**
      * Persist will create the dependent object's table first in the db and
      * remove will delete both the table if the table holding the primary key is deleted first (in one to many relationship)
+     * Look in the reviewService, for more context...
      */
+
     private List<Booking> bookings;
 
 }
